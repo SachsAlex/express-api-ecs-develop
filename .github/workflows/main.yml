@@ -31,3 +31,7 @@ jobs:
     # TODO: Docker Image bauen und pushen
     - name: Docker build, tag, push
       run: echo "Hello Docker"
+      aws ecr get-login-password --region eu-central-1 | docker login --username AWS --password-stdin 243411915368.dkr.ecr.eu-central-1.amazonaws.com
+      docker build -t express-api-test .
+      docker tag express-api-test:latest 243411915368.dkr.ecr.eu-central-1.amazonaws.com/express-api-test:latest
+      docker push 243411915368.dkr.ecr.eu-central-1.amazonaws.com/express-api-test:latest
