@@ -3,6 +3,10 @@ name: example-workflow
 on: workflow_dispatch
 
 jobs:
+  lint:
+    runs-on: node:latest
+    steps:
+      - run: npm run lint
   copy: # kopiert den Repository Inhalt auf den Runner
     runs-on: ubuntu-latest
     steps:
