@@ -11,7 +11,7 @@ jobs:
     - name: ls
       run: |
         ls
-  lint:
+  checkout:
     # lint (check for syntax)
     runs-on: ubuntu-latest
     steps:
